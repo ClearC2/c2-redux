@@ -1,4 +1,4 @@
-# C2 Redux
+# C2 Redux [![CircleCI](https://circleci.com/gh/ClearC2/c2-redux.svg?style=svg)](https://circleci.com/gh/ClearC2/c2-redux)
 
 `c2-redux` is a collection of utilities to implement and/or aid an existing redux store.
 
