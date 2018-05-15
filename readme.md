@@ -67,7 +67,7 @@ The `apiMiddleware` intercepts actions with a `types` field. It assumes the firs
 #### shouldCallAPI
 If `undefined`, the default function provided to the middleware at instantiation will be used. Otherwise, this should be a function that returns a boolean. This function will receive redux's `getState` function as the first argument and the `requestId` as the second argument.
 
-### callAPI
+#### callAPI
 This is a function that will receive redux's `getState` function as the one and only argument. This function should return a promise. If the promise successfully resolves, the resolved value will be the `response` on the success action. If the promise rejects, the rejected value will be the `error` on the failure action.
 
 #### requestId
