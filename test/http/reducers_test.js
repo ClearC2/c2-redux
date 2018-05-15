@@ -54,7 +54,7 @@ describe('http reducers', () => {
     ]
     tests.forEach(test => (
       it(`handles ${test[0].substr(-7)}`, () => {
-        const action = {type: test[0], requestId, errors: {response: {data: {errors: newErrors}}}}
+        const action = {type: test[0], requestId, error: {response: {data: {errors: newErrors}}}}
         const initialState = fromJS({[requestId]: existingErrors})
         const nextState = errorsReducer(initialState, action)
         expect(nextState).to.equal(fromJS({

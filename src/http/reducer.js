@@ -19,5 +19,5 @@ export function errorsReducer (state = Map(), action) {
   const matches = /(.*)_(REQUEST|SUCCESS|FAILURE)/.exec(action.type)
   if (!matches) return state
   const [,, requestState] = matches
-  return state.set(action.requestId, requestState === 'FAILURE' ? fromJS(action.errors.response.data.errors) : null)
+  return state.set(action.requestId, requestState === 'FAILURE' ? fromJS(action.error.response.data.errors) : null)
 }
