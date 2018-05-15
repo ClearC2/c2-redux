@@ -1,0 +1,33 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8.11.1-browsers
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          # This branch if available
+          - v1-dep-{{ .Branch }}-
+          # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
+          - v1-dep-
+
+      - run: wget -O yarn.js https://github.com/yarnpkg/yarn/releases/download/v1.6.0/yarn-1.6.0.js
+      - run: node ./yarn.js --frozen-lockfile
+
+      - save_cache:
+          key: v1-dep-{{ .Branch }}-{{ epoch }}
+          paths:
+          - ~/.cache/yarn
+          - ./node_modules
+
+      # run tests!
+      - run: node ./yarn.js run test
