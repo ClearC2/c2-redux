@@ -34,7 +34,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "chai-immutable": "^1.6.0",
+    "chai-immutable": "^2.0.0-alpha.1",
     "css-loader": "^0.28.1",
     "eslint-config-c2-react": "^1.4.2",
     "extract-text-webpack-plugin": "^2.1.0",
@@ -45,21 +45,18 @@
     "react-redux": "^5.0.6",
     "redux": "^4.0.0",
     "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.2.0",
     "sinon": "^5.0.7",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.0",
     "webpack-dev-server": "^2.4.5"
   },
   "peerDependencies": {
-    "immutable": "^3.8.2",
+    "immutable": "^3.0.0",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
     "react-redux": "^4.0.0 || ^5.0.0",
-    "redux": "^3.0.0 || ^4.0.0"
-  },
-  "dependencies": {
-    "prop-types": "^15.0.0",
-    "redux-immutable": "^4.0.0",
-    "redux-thunk": "^2.2.0"
+    "redux": "^3.0.0 || ^4.0.0",
+    "redux-immutable": "^4.0.0"
   }
 }
