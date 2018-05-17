@@ -2,6 +2,12 @@
 
 `c2-redux` is a collection of utilities to implement and/or aid an existing redux store.
 
+## Install
+
+```
+yarn add c2-redux
+```
+
 ## Utilities
 
 ### createStore()
@@ -26,7 +32,8 @@ The `apiMiddleware` simplifies writing actions that interact with api endpoints.
 ```js
 // src/redux/store.js
 import {createStore, apiMiddleware} from 'c2-redux'
-const reducerMap = {}
+import {combineReducers} from 'redux-immutable'
+const reducer = combineReducers({})
 const defaultShouldCallAPI = (getState, requestId) => {
     const isLoading = getState().getIn(['http', 'loading', requestId]) || false
     return !isLoading
@@ -34,7 +41,7 @@ const defaultShouldCallAPI = (getState, requestId) => {
 const middlware = [
     apiMiddleware(defaultShouldCallAPI)
 ]
-export default createStore(reducerMap, middlware)
+export default createStore(reducer, middlware)
 ```
 The one and only argument to `apiMiddleware` is the default function to use to determine whether to make a request. This can be overridden at the individual action level.
 
