@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import {combineReducers} from 'redux-immutable'
 import {
   createStore,
   apiMiddleware,
@@ -20,7 +20,9 @@ const defaultShouldCallAPI = (getState, requestId) => {
   return !isLoading
 }
 
-const store = createStore(reducerMap, [apiMiddleware(defaultShouldCallAPI)])
+const appReducer = combineReducers(reducerMap)
+
+const store = createStore(appReducer, [apiMiddleware(defaultShouldCallAPI)])
 
 store.subscribe(() => {
   console.log(store.getState())

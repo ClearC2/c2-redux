@@ -1,10 +1,8 @@
 import {Map} from 'immutable'
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
-import {combineReducers} from 'redux-immutable'
 
-export default function create (reducerMap, middleware = []) {
-  const reducer = combineReducers(reducerMap)
+export default function create (reducer, middleware = []) {
   return createStore(
     reducer,
     Map(),

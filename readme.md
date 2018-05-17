@@ -14,12 +14,11 @@ If your project already has a redux store you can either replace it with `c2-red
 ```js
 // src/redux/store.js
 import {createStore} from 'c2-redux'
-const reducerMap = {}
-const middlware = []
-export default createStore(reducerMap, middlware)
+import {combineReducers} from 'redux-immutable'
+const middleware = []
+const reducer = combineReducers({})
+export default createStore(reducer, middleware)
 ```
-
-The `reducerMap` gets passed to redux's `combineReducers()` function.
 
 ### apiMiddleware
 The `apiMiddleware` simplifies writing actions that interact with api endpoints. Make use of this middleware by adding it in the store creation.
@@ -144,7 +143,7 @@ If the above reducers will work for your application, make use of them like so.
 
 ```js
 // src/redux/store.js
-import {combineReducers} from 'redux'
+import {combineReducers} from 'redux-immutable'
 import {
     createStore,
     apiMiddleware,
