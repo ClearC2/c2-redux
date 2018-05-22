@@ -9,7 +9,7 @@ const apiMiddleware = (defaultShouldCallAPI = returnTrue) => ({dispatch, getStat
     payload = {}
   } = action
 
-  if (!types) {
+  if (!types && !requestId) {
     // normal action: pass it on
     return next(action)
   }
@@ -19,9 +19,6 @@ const apiMiddleware = (defaultShouldCallAPI = returnTrue) => ({dispatch, getStat
     !types.every(type => typeof type === 'string')
   ) {
     throw new Error('Expected an array of three string types.')
-  }
-  if (!requestId) {
-    throw new Error('Expected a requestId')
   }
 
   if (typeof callAPI !== 'function') {
