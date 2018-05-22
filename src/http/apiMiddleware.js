@@ -9,7 +9,7 @@ const apiMiddleware = (defaultShouldCallAPI = returnTrue) => ({dispatch, getStat
     payload = {}
   } = action
 
-  if (!types && !requestId) {
+  if (!types || !requestId) {
     // normal action: pass it on
     return next(action)
   }

@@ -43,12 +43,6 @@ describe('api middleware', () => {
     assert.throws(() => actionHandler(actionObj))
     done()
   })
-  it('must throw error if types and no requestId', done => {
-    const actionObj = {types: ['1', '2', '3']}
-    const actionHandler = nextHandler(() => {})
-    assert.throws(() => actionHandler(actionObj))
-    done()
-  })
   it('must throw error if callAPI is not function', done => {
     const actionObj = {types: ['1', '2', '3'], requestId, callAPI: 'not func'}
     const actionHandler = nextHandler(() => {})
