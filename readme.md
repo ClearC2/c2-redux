@@ -173,7 +173,7 @@ const defaultShouldCallAPI = (getState, requestId) => {
 const middlware = [
     apiMiddleware(defaultShouldCallAPI)
 ]
-export default createStore(reducerMap, middlware)
+export default createStore(combineReducers(reducerMap), middlware)
 ```
 
 
