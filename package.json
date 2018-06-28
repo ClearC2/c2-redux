@@ -1,6 +1,6 @@
 {
   "name": "c2-redux",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "an opinionated way to manage redux",
   "repository": {
     "type": "git",
@@ -9,6 +9,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "cd example && webpack-dev-server --inline --content-base dist --history-api-fallback --port 8088",
+    "build": "babel -d lib/ src/",
     "prepublish": "babel -d lib/ src/",
     "lint": "eslint \"src/**/*.js\"",
     "test": "mocha --require babel-polyfill --require babel-register --require ./test/test_helper.js \"test/**/*.js\""
