@@ -40,20 +40,24 @@ const apiMiddleware = (defaultShouldCallAPI = returnTrue) => ({dispatch, getStat
     requestId
   })
   return callAPI(getState).then(
-    response =>
+    response => {
       dispatch({
         payload,
         response,
         type: successType,
         requestId
-      }),
-    error =>
+      })
+      return response
+    },
+    error => {
       dispatch({
         payload,
         error,
         type: failureType,
         requestId
       })
+      throw error
+    }
   )
 }
 
