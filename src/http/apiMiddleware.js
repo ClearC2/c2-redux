@@ -56,7 +56,7 @@ const apiMiddleware = (defaultShouldCallAPI = returnTrue) => ({dispatch, getStat
         type: failureType,
         requestId
       })
-      throw error
+      return error
     }
   )
 }
