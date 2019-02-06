@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/ClearC2/c2-redux/compare/v1.0.8...v1.0.9) (2019-02-06)
+
+
+### Bug Fixes
+
+* **npm:** publish to npm for real this time. take 3 ([c12612b](https://github.com/ClearC2/c2-redux/commit/c12612b))
+
 ## [1.0.8](https://github.com/ClearC2/c2-redux/compare/v1.0.7...v1.0.8) (2019-02-06)
 
 
