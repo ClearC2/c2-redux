@@ -11,7 +11,18 @@
     "start": "cd example && webpack-dev-server --inline --content-base dist --history-api-fallback --port 8088",
     "prepublish": "babel -d lib/ src/",
     "lint": "eslint \"src/**/*.js\"",
-    "test": "mocha --require babel-polyfill --require babel-register --require ./test/test_helper.js \"test/**/*.js\""
+    "test": "mocha --require babel-polyfill --require babel-register --require ./test/test_helper.js \"test/**/*.js\"",
+    "cm": "git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branch": "master",
+    "extends": "c2-semantic-release"
   },
   "author": "David Adams",
   "license": "ISC",
@@ -33,6 +44,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "c2-semantic-release": "ClearC2/c2-semantic-release#^1.0.0",
     "chai": "^4.1.2",
     "chai-immutable": "^2.0.0-alpha.1",
     "css-loader": "^0.28.1",
