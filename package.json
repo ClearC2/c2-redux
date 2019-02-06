@@ -24,7 +24,11 @@
   "release": {
     "branch": "master",
     "extends": "c2-semantic-release",
-    "npmPublish": true
+    "npmPublish": true,
+    "publish": [
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ]
   },
   "author": "David Adams",
   "license": "ISC",
