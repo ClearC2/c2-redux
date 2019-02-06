@@ -8,7 +8,7 @@ export default function create (reducer, middleware = []) {
     Map(),
     compose(
       applyMiddleware(thunk, ...middleware),
-      window && window.devToolsExtension ? window.devToolsExtension() : f => f
+      window && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
     )
   )
 }
