@@ -23,7 +23,8 @@
   },
   "release": {
     "branch": "master",
-    "extends": "c2-semantic-release"
+    "extends": "c2-semantic-release",
+    "npmPublish": true
   },
   "author": "David Adams",
   "license": "ISC",
