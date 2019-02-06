@@ -1,6 +1,6 @@
 {
   "name": "c2-redux",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "an opinionated way to manage redux",
   "repository": {
     "type": "git",
