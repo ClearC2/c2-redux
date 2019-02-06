@@ -32,6 +32,6 @@ jobs:
       # run tests!
       - run: node ./yarn.js run test
       - run:
-        command: yarn run semantic-release
-        environment:
-          ASSETS: lib,docs
+          command: yarn run semantic-release
+          environment:
+            ASSETS: lib,docs
